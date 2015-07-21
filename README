@@ -1,0 +1,5 @@
+This is a project to, for educational and client-making purposes, attempt to investigate the protocols and methods of communication between the oldschool runescape client and the servers. We discourage anyone from trying to use results to make bots, except to test findings.
+
+This is basically a project to black-box reverse-engineer a runescape client without looking at any of its source code - that's the idea, anyway.
+
+Currently there is a program (called "ProxyProgram") that I have created that will forward any traffic it receives from the client to oldschool60.runescape.com, and will forward any traffic from oldschool60.runescape.com to the client. Currently the only way to exit it is using ctrl-C from the command line. It will print out all data sent through it on port 43594 using the tcp protocol. OSRS uses some UDP connections, I think, and those will not be printed out or intercepted - hopefully later we'll be able to get those. The program requires a certain configuration using iptables to work - instructions are found in ProxyProgram/requirements
