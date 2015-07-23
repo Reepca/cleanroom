@@ -1,0 +1,78 @@
+Movement commands are of the form
+5 <Y,Y> <Something> <X,X>
+
+Usually <Something> is 0, presumably this is the level (height-wise) that a person is on - for example, first floor, ground floor, etc. Probably special "floors" for instances and realms (abyss, etc).
+
+<Y, Y> is two bytes that represent the y-coordinate. The first byte is the more significant one. <X,X> is two bytes that represent the y-coordinate, however the more significant byte appears to come last.
+
+Having gone up some stairs, I can actually confirm that the 0 is *not* the level. Perhaps it's just a delimiter of some kind.
+
+12  -62  12  -128  27  -45
+
+an interaction with a door, accessed from position <Y,Y,  X,X> = <12, 66,   123, 12>
+
+-46 at the end instead of -45 opens it.
+
+122  12  -63  12  -128  85  21 : going up the ladder at the sorceress's house.
+
+
+new session opening same door, same world:
+
+124  12  -62  12  -128  27  -46 
+
+another try on a different session:
+
+same result as immediately above. Apparently I didn't notice that the 124 was constant too. Let's now look at the not-constant stuff.
+
+
+
+-8  0  3  0  4  1  67  0  61  -25 
+ 124  12  -62  12  -128  27  -46 
+
+ -56  0  61  0  4  1  67  0  61  -53 
+ 124  12  -62  12  -128  27  -46 
+
+The -8 became -56, and the 3 became 61. Here's a list of many more packets sent to get the door open, in order of occurrence, with packet details.
+
+from client [addr=/192.168.254.69,port=49009,localport=43594]: 
+timestamp: 1437541015537
+ 112  0  -43  0  4  1  8  0  31  74 
+ 124  12  -62  12  -128  27  -46 
+
+from client [addr=/192.168.254.69,port=49009,localport=43594]: 
+timestamp: 1437541015797
+ 44  0  -74  0  8  1  9  0  31  19 
+ 124  12  -62  12  -128  27  -46 
+
+from client [addr=/192.168.254.69,port=49009,localport=43594]: 
+timestamp: 1437541016078
+ 65  0  -116  0  4  1  9  0  31  113 
+ 124  12  -62  12  -128  27  -46 
+
+from client [addr=/192.168.254.69,port=49009,localport=43594]: 
+timestamp: 1437541016218
+ -16  0  -11  0  4  1  9  0  31  107 
+ 124  12  -62  12  -128  27  -46 
+
+123  12  -62  12  -128  27  -45
+
+
+based on this, we can see that the first, third, slightly-fifth, slightly-seventh, and tenth bytes change.
+
+121  12  -58  12  -128  27  -46 
+
+^-- constants of the door in the bottom floor of sorceress's house in al kharid.
+
+The first and third bytes change. the location immediately north of the door is y=<12, 70>, x=<12, 121>. The location immediately south of the door is y=<12, 69>, x=<12,121>.
+
+It's clear that the first two bytes are the x-position. This is the full message:
+
+from client [addr=/192.168.254.69,port=49698,localport=43594]: 
+timestamp: 1437548143125
+ -25  2  71  -30  27  0  4  1  112  0 
+ 100  -21  121  12  -58  12  -128  27  -46 
+
+It's clear that the -46 at the end indicates the action to be done to the door (-45 is to close the door). So why is this third byte changing and what does it mean? it changes by +4
+
+Actually, 123 happens when clicking to close the top door, and 124 happens when clicking to open the top door. Perhaps this is used for some kind of encoding? IE 123 would be "begin door-close"  and -45 would be "end door-close"? Suppose that there's a different entity ID for the closed door than for the open door?
+

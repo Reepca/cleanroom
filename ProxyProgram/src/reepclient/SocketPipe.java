@@ -16,7 +16,9 @@ public class SocketPipe
 			}catch(Exception e)
 			{
 				System.out.println("Something went wrong while reading from " + 
-								   inputSocket.toString());
+								   inputSocket.toString() + ". Message and stack trace follow: ");
+				System.out.println(e.getMessage());
+				e.printStackTrace();
 			}
 		}
 		try

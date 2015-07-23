@@ -1,0 +1,8 @@
+Type "--output <filename>" to redirect the output to a file while running, 
+or replace <filename> with "System.out" to redirect it back to the command 
+line. Only actions relevant to the folder that the output is in should be 
+done while writing to a file in that folder. All filenames are relative to the
+directory that the program is launched from - for example, if you run 
+ProxyProgram from cleanroom, and you want to write to log1 in 
+networklogs/movement/ then you type "--output /networklogs/movement/log1".
+ 

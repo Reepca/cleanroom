@@ -3,12 +3,14 @@ package reepclient;
 //TODO: Add pseudo-regex-ish support to findByteSequence - probably add a helper method.
 
 import java.net.InetAddress;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.net.Socket;
 import java.net.ServerSocket;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
+import java.io.File;
 public class ProxyProgram 
 {
 	public static final int PRIMARY_CLIENT_PORT = 43594;
@@ -25,6 +27,7 @@ public class ProxyProgram
 	ServerSocket listeningServer;
 	ArrayList<SocketPipe> pipes = new ArrayList<SocketPipe>();
 	ArrayList<PipeManipulator> processingChain;
+	PrintStream output = System.out;
 	
 	PipeManipulator callProcessingChain = (throughBytes, from, to) ->
 	{
@@ -81,6 +84,16 @@ public class ProxyProgram
 		clientGreeter.start();
 	}
 	
+	public void setPrintStream(PrintStream setTo)
+	{
+		output = setTo;
+	}
+	
+	public PrintStream getPrintStream()
+	{
+		return output;
+	}
+	
 	ArrayList<PipeManipulator> getProcessingChain()
 	{
 		return processingChain;
@@ -95,52 +108,108 @@ public class ProxyProgram
 	public static void main(String[] args)throws Exception
 	{
 		ArrayList<PipeManipulator> chainOfProcessing = new ArrayList<PipeManipulator>();
+		String programCalledFromDir = System.getProperty("user.dir");
+			
 		ProxyProgram proxy = new ProxyProgram(PRIMARY_CLIENT_PORT, OUT_PORT, "oldschool60.runescape.com", 
 				chainOfProcessing);
-		PipeManipulator printer = (throughBytes, from, to) ->
+		PipeManipulator bytePrinter = (throughBytes, from, to) ->
 		{
 			if(throughBytes.length > 0)
 			{			
 				long timeStamp = System.currentTimeMillis();
-				synchronized(System.out)
+				PrintStream output = proxy.getPrintStream();
+				synchronized(output)
 				{
 					String alias;
 					if(proxy.isServerSide(from))alias = "server";
 					else alias = "client";
 					
-					System.out.println("from " + alias + " " + from.toString().replace("Socket", "") + ": ");
-					System.out.println("timestamp: " + timeStamp);
+					output.println("from " + alias + " " + from.toString().replace("Socket", "") + ": ");
+					output.println("timestamp: " + timeStamp);
 					int timesPrinted = 0;
 					int perLineLimit = 10;
 					for(byte b: throughBytes)
 					{
-						System.out.print(" " + b + " ");
+						output.print(" " + b + " ");
 						timesPrinted++;
 						if(timesPrinted % perLineLimit == 0)
 						{
-							System.out.println();
+							output.println();
 						}
 					}
-					System.out.println();
-					System.out.println("text representation: ");
-					timesPrinted = 0;
-					perLineLimit = 20;
-					for(byte b: throughBytes)
-					{
-						System.out.print(new String(new byte[]{b}));
-						timesPrinted++;
-						if(timesPrinted % perLineLimit == 0)
-						{
-							System.out.println();
-						}
-					}
-					System.out.println();
-					
+					output.println();
 				}
 			}
 			return throughBytes;
 		};
-		chainOfProcessing.add(printer);
+		
+		PipeManipulator textPrinter = (throughBytes, from, to) ->
+		{
+			if(throughBytes.length > 0)
+			{
+				PrintStream output = proxy.getPrintStream();
+				synchronized(output)
+				{
+					output.println("text representation: ");
+					int perLineLimit = 20;
+					String fullString = new String(throughBytes);
+					int sectionCount = (int)Math.ceil((float)fullString.length() / (float)perLineLimit);
+					for(int i = 0; i < sectionCount; i++)
+					{
+						if(i != sectionCount - 1)
+						{
+							output.println(fullString.substring(i * perLineLimit, (i + 1) * perLineLimit));
+						}else
+						{
+							output.println(fullString.substring(i * perLineLimit, fullString.length() - 1));
+						}
+					}
+					output.println();
+				}
+			}
+			return throughBytes;
+		};
+		
+		Thread inputParser = new Thread(() -> 
+		{
+			while(true)
+			{
+				try
+				{
+					byte[] input = new byte[1000];
+					System.in.read(input);
+					String inputString = new String(input);
+					String[] separatedInput = inputString.split(" ");
+					for(int i = 0; i < separatedInput.length; i++)
+					{
+						if(separatedInput[i].equals("--output") && i != separatedInput.length - 1)
+						{
+							synchronized(proxy.getPrintStream())
+							{
+								proxy.getPrintStream().flush();
+								if(!separatedInput[i+1].toLowerCase().trim().equals("system.out"))
+								{
+									//System.out.println("attempting to switch output to: " + programCalledFromDir + separatedInput[i + 1]);
+									File writeOutTo = new File((programCalledFromDir + separatedInput[i+1]).trim());
+									writeOutTo.createNewFile();
+									//System.out.println("successfully made File");
+									proxy.setPrintStream(new PrintStream(writeOutTo));
+								}else proxy.setPrintStream(System.out);
+							}
+						}
+							
+					}
+				}catch(Exception e)
+				{
+					System.err.println("Something went wrong while parsing the input: " + e.getMessage());
+				}
+			}
+		});
+		Runtime.getRuntime().addShutdownHook(new Thread(() -> {proxy.getPrintStream().flush();}));
+		inputParser.start();
+		chainOfProcessing.add(bytePrinter);
+		if(args.length > 0){if(args[0].equals("-text")){chainOfProcessing.add(textPrinter);}}
+			
 		proxy.startListening();
 		
 	}
