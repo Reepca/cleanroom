@@ -1,0 +1,785 @@
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632724535
+ 41  0  2  0  -128  79  0  4  12  5 
+ 64  86 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632724936
+ 15 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632725145
+ -94  0  2  0  -128  98  0  5  12  5 
+ -62  -9  86 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632725176
+ -81  0 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632725694
+ 80  0  12  1  0  0  0  -36  0  97 
+ 104  0  97  101  0  -47  0  2  0  -128 
+ 0  0  4  11  0  -68  0 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632725721
+ -99  9  0  0  0  -36  -15  33  21  -65 
+ -124 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632726299
+ 8  0  11  0  -49  -2  48  15  25  -39 
+ 24  0  3  -128  -86  0  4  11  0  -80 
+ 0 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632726716
+ 9 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632726928
+ -15  0  2  0  -128  10  0  4  11  0 
+ -84  0 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632727190
+ -88  38  -42  -70  -57  -107  -126  68  -107  -126 
+ 32  -36  12  95  8  30  7  -106  6  -44 
+ 6  88  54  -31  6  -31  7  32  7  -97 
+ 7  -98  6  -38  7  -98  6  -103  7  -97 
+ 85  6  34  0  -32  0  -124  18  79  12 
+ -15  12  -128  27  -45 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632727205
+ 44  1 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632727490
+ 93  -1  -1  -39  4  12  -127  -31  0  60 
+ 1  0  0  122  0  33  1  0  0  0 
+ -35  4  102  102  0  117  0  2  106  97 
+ 118  97  46  108  97  110  103  46  83  116 
+ 114  105  110  103  0  73  0  90  0  45 
+ 0  8  -128  47  -2  32  31  25  -29  24 
+ 96  0  4  11  0  -84  0  6  0  5 
+ -96  -48  -115  1  -15  -107  0  7  -88  -48 
+ 8  0  27  82  -127 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632727496
+ 66  13  0  0  0  -35  0  0  0  0 
+ 1  63  -82  43  -55 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632728093
+ -114  0  2  0  -128  -76  0  4  11  0 
+ -84  -88 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632728517
+ -5 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632728767
+ -100  0  11  0  -49  -2  48  15  25  -39 
+ 24  0  3  -128  -31  0  3  11  0  0 
+
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632728963
+ -48  8  -63  1  -111  79  8  -94  8  33 
+ 69  0  70  0  -29  0  -119  21  80  12 
+ -15  12  -128  27  -46 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632729143
+ 113  0  -77  0  6  0  -29  0  -119  -4 
+ 80  12  -15  12  -128  27  -46 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632729316
+ -39  0  49  0  6  0  -29  0  -119  -121 
+ 80  12  -15  12  -128  27  -46 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632729337
+ -69  -1  -1  -72  0  62  1  0  0  -48 
+ 0  12  1  0  0  0  -34  0  102  104 
+ 0  98  120  0  46  0  8  -128  47  -2 
+ 32  33  25  -29  24  -77  0  3  11  0 
+ 0  -17  0  7  -96  -48  8  -1  27  83 
+ -15  -124  0  5  -88  -48  -115  0  -127 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632729356
+ -63  9  0  0  0  -34  -19  7  34  -127 
+ 73 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632729476
+ 37  0  -68  0  6  0  -29  0  -119  47 
+ 79  12  -15  12  -128  27  -45 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632729638
+ 86  0  68  0  6  0  -29  0  -119  70 
+ 79  12  -15  12  -128  27  -45 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632729796
+ 62  0  124  0  6  0  -29  0  -119  -71 
+ 79  12  -15  12  -128  27  -45 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632729889
+ -127  -1  -1  -77  -1  -1  62  -1  -1  22 
+ -1  -1  -111  4  12  -126  -59  0  60  1 
+ 0  0  -77  0  8  -128  47  -2  32  31 
+ 25  -29  24  -101  0  4  11  86  2  -96 
+ -117  0  5  -96  -48  -115  1  -15  -82  0 
+ 7  -88  -48  8  0  27  82  -127 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632729964
+ -4  0  -79  0  6  0  -29  0  -119  96 
+ 80  12  -15  12  -128  27  -46 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632730116
+ 107  0  77  0  6  0  -29  0  -119  99 
+ 80  12  -15  12  -128  27  -46 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632730276
+ -110  0  -108  0  6  0  -29  0  -119  -27 
+ 80  12  -15  12  -128  27  -46 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632730496
+ -124  -1  -1  -108  -1  -1  5  -1  -1  -119 
+ 0  62  1  0  0  70  0  8  -128  47 
+ -2  32  33  25  -29  24  -25  0  5  11 
+ 90  22  10  -100  -20  0  7  -96  -48  8 
+ -1  27  83  -15  -11  0  5  -88  -48  -115 
+ 0  -127 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632730497
+ -55  0  -108  0  8  0  -29  0  -119  -81 
+ 80  12  -15  12  -128  27  -46 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632730677
+ 5  0  32  0  6  0  -29  0  -119  101 
+ 79  12  -15  12  -128  27  -45 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632730856
+ 21  6  -63  65  -99  68  7  -95  8  0 
+ 6  0  -32  0  -117  -54  79  12  -15  12 
+ -128  27  -45 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632731042
+ 103  2  7  -32  -30  0  6  0  -33  0 
+ -117  47  79  12  -15  12  -128  27  -45 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632731118
+ -122  -1  -1  87  -1  -1  68  -1  -1  -120 
+ 4  12  -125  -26  0  60  1  0  0  103 
+ 0  11  1  0  0  0  -33  2  97  104 
+ 0  110  0  -34  0  17  -128  51  -1  -128 
+ 32  31  25  -29  24  48  15  25  -39  24 
+ 0  3  -128  113  0  4  10  86  22  0 
+ -105  0  5  -96  -48  -115  1  -15  58  0 
+ 7  -88  -48  8  0  27  82  -127 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632731136
+ -15  13  0  0  0  -33  0  0  0  0 
+ 0  5  97  -70  84 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632731198
+ 12  0  -92  0  6  0  -33  0  -117 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632731215
+ -50  5  12  114  0  80  12 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632731356
+ 102  0  -106  0  6  0  -33  0  -117 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632731376
+ 6  5  12  114  0  80  12 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632731536
+ 44  0  0  0  6  0  -33  0  -117 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632731558
+ -20  5  12  114  0  80  12 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632731718
+ -82  0  44  0  6  0  -33  0  -117 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632731719
+ 33  -1  -1  117  -1  -1  -77  0  2  0 
+ -128  49  0  3  10  5  96 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632731736
+ 88  5  12  114  0  80  12 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632731922
+ 117  0  -49  0  8  0  -33  0  -117 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632731941
+ -75  5  12  114  0  80  12 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632732310
+ -123  -1  -1  -103  0  2  -92  2  10  0 
+ 4  10  5  98  -80 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632732465
+ -41  6  -64  -39  -93  59  40  33 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632732946
+ -119  0  10  1  0  0  0  -32  2  117 
+ 0  109  0  0  0  2  0  -128  82  0 
+ 5  10  11  -108  10  -64 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632732959
+ 71  13  0  0  0  -32  0  0  0  0 
+ 0  -16  77  15  44 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632733511
+ 24  0  11  0  -49  -2  48  15  25  -39 
+ 24  0  3  -128  122  0  3  10  5  -128 
+
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632733938
+ 107  40  54  -32  7  -32  69  -91  7  -95 
+ 40  -30  9  98  9  33  10  101  11  42 
+ 9  101  10  101  10  -26  8  -95  8  -95 
+ 8  -94  7  97  4  96  7  -94  6  93 
+ 7  30  67  0  80  0  -18  0  -71 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632733956
+ 100  5  12  114  0  79  12 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632734121
+ -13  0  2  0  -128  70  0  3  10  5 
+ 32  -26  0  7  -64  -40  8  -1  27  83 
+ -9 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632734376
+ -114  4  -64  66  23  -38  7  0  16  0 
+ -12  0  -78  82  80  12  -15  12  -128  27 
+ -46 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632734712
+ -1  -1  -1  -91  -1  -1  106  0  62  1 
+ 0  0  -15  0  11  1  0  0  0  -31 
+ 0  98  99  0  99  0  -43  0  8  -128 
+ 47  -2  32  33  25  -29  24  122  0  3 
+ 10  5  -128  117  0  7  -96  -48  8  -1 
+ 27  83  -15  -51  0  5  -88  -48  -115  0 
+ -127 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632734716
+ 103  9  0  0  0  -31  -15  75  -3  -9 
+ 58 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632735231
+ -52  10  8  95  72  31  6  -99  7  30 
+ 8  31  -11  0  34  0  -22  0  -85  65 
+ 79  12  -15  12  -128  27  -45 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632735309
+ -91  0  2  0  -128  63  0  3  10  10 
+ -64 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632735376
+ -118  0  67  0  6  0  -22  0  -85  -75 
+ 79  12  -15  12  -128  27  -45 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632735557
+ 62  0  -87  0  6  0  -22  0  -85  -2 
+ 79  12  -15  12  -128  27  -45 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632735739
+ -79  0  120  0  6  0  -22  0  -85  -27 
+ 79  12  -15  12  -128  27  -45 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632735916
+ 53  40  49  43  40  49  -58  40  49  2 
+ 40  49  -45  -1  -1  -87  0  17  -70  3 
+ 63  -8  32  31  25  -29  24  48  15  25 
+ -39  24  0  3  -128  -77  0  4  10  11 
+ 65  96 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632736477
+ -13  20  -64  -79  -10  -20  1  -40  3  94 
+ 7  -33  41  -32  12  -95  9  -32  9  32 
+ 8  -32  56  0  28  0  -34  0  -98  -122 
+ 79  12  -15  12  -128  27  -45 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632736578
+ 5  4  12  -124  -34  0  60  1  0  0 
+ -10  0  11  1  0  0  0  -30  0  103 
+ 98  0  120  0  3  0  2  0  -128  -99 
+ 0  4  10  10  -42  7  -42  0  5  -96 
+ -48  -115  1  -15  -48  0  7  -88  -48  8 
+ 0  27  82  -127 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632736599
+ 41  13  0  0  0  -30  0  0  0  32 
+ 0  40  1  -118  -123 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632736617
+ -117  0  106  0  4  0  -34  0  -99 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632736637
+ -38  5  12  114  0  79  12 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632736756
+ 24  0  -59  0  6  0  -34  0  -99 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632736776
+ 65  5  12  114  0  79  12 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632737096
+ -101  12  104  -37  8  -98  8  -98  8  -97 
+ 8  -97  9  95  23  0  12  0  -17  0 
+ -110  -100  80  12  -15  12  -128  27  -46 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632737156
+ -59  -1  -1  4  40  50  53  -1  -1  -16 
+ 0  2  -92  2  -83  0  10  9  10  -42 
+ 0  -125  -74  -98  96  61  0 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632737287
+ 34  4  8  96  24  95  25  0  6  0 
+ -16  0  -111  -128  80  12  -15  12  -128  27 
+ -46 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632737436
+ 81  4  39  -32  7  -32  35  0  6  0 
+ -18  0  -111  3  80  12  -15  12  -128  27 
+ -46 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632737618
+ 20  2  39  -96  119  0  6  0  -20  0 
+ -110  -26  80  12  -15  12  -128  27  -46 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632737773
+ 77  -1  -1  -11  -1  -1  -47  -1  -1  107 
+ 0  62  1  0  0  14  0  8  -128  47 
+ -2  32  33  25  -29  24  -25  0  5  10 
+ 44  2  -59  -96  53  0  7  -96  -48  8 
+ -1  27  83  -15  66  0  5  -88  -48  -115 
+ 0  -127 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632737800
+ 77  2  8  33  -117  0  6  0  -20  0 
+ -110  -34  79  12  -15  12  -128  27  -45 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632738342
+ -16  -1  -1  54  -1  -1  -35  40  49  35 
+ -1  -1  -23  0  12  1  0  0  0  -29 
+ 0  102  104  0  101  103  0  -17  0  17 
+ -70  3  63  -8  32  31  25  -29  24  48 
+ 15  25  -39  24  0  3  -128  0  0  10 
+ 10  0  -79  112  65  108  89  92  -11  -128 
+
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632738356
+ 98  9  0  0  0  -29  -19  109  -54  -55 
+ -9 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632738376
+ -106  6  -64  97  -72  50  6  -22  67  0 
+ 22  0  -26  0  -98  -82  79  12  -15  12 
+ -128  27  -45 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632738559
+ 51  2  8  33  -70  0  6  0  -26  0 
+ -98  122  79  12  -15  12  -128  27  -45 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632738737
+ -6  0  -106  0  6  0  -26  0  -98  -123 
+ 79  12  -15  12  -128  27  -45 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632738876
+ 38  0  -22  0  4  0  -26  0  -98  -115 
+ 79  12  -15  12  -128  27  -45 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632738931
+ 54  -1  -1  -29  -1  -1  -35  4  12  -123 
+ -11  0  60  1  0  0  110  0  8  -128 
+ 47  -2  32  31  25  -29  24  52  0  5 
+ 11  10  2  -91  -50  -29  0  5  -96  -48 
+ -115  1  -15  -17  0  7  -88  -48  8  0 
+ 27  82  -127 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632739055
+ 106  0  -3  0  6  0  -25  0  -98 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632739077
+ 7  5  12  114  0  80  12 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632739236
+ -118  8  -64  105  -39  13  8  -37  8  -98 
+ -111  0  6  0  -20  0  -105  -105  80  12 
+ -15  12  -128  27  -46 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632739409
+ 87  0  24  0  6  0  -20  0  -105  -32 
+ 80  12  -15  12  -128  27  -46 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632739512
+ -58  -1  -1  -57  -1  -1  55  -1  -1  -2 
+ 0  2  -92  2  -127  0  5  10  10  85 
+ -123  -64 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632739578
+ -54  0  -77  0  6  0  -20  0  -105  16 
+ 80  12  -15  12  -128  27  -46 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632739736
+ -114  0  -39  0  6  0  -20  0  -105  -7 
+ 80  12  -15  12  -128  27  -46 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632739937
+ -2  0  2  0  6  0  -20  0  -105  19 
+ 80  12  -15  12  -128  27  -46 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632740114
+ -21  -1  -1  -102  -1  -1  44  -1  -1  115 
+ -1  -1  -122  0  62  1  0  0  10  0 
+ 11  1  0  0  0  -28  0  100  0  105 
+ 120  0  -22  0  8  -128  47  -2  32  33 
+ 25  -29  24  29  0  5  10  10  -44  -123 
+ -96  -84  0  7  -96  -48  8  -1  27  83 
+ -15  15  0  5  -88  -48  -115  0  -127 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632740138
+ -12  13  0  0  0  -28  0  0  0  0 
+ 0  107  -36  77  58 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632740724
+ 54  -1  -1  -94  0  -109  63  0  11  0 
+ -49  -2  48  15  25  -39  24  0  3  -128 
+ 98  0  4  10  44  1  88 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632741156
+ -21 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632741319
+ 83  18  -64  -23  -57  36  72  34  9  -17 
+ 9  -27  24  98  8  -26  8  -90  9  107 
+ 90  0  54  1  6  0  -55 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632741335
+ 2  0  2  0  -128  -96  0  4  10  46 
+ 1  88 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632741337
+ -90  5  12  113  0  80  12 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632741926
+ 113  -1  -1  75  0  15  1  0  0  0 
+ -27  4  122  0  118  0  1  73  0  90 
+ 0  90  0  2  -72  2  7  0  5  10 
+ 82  -72  5  96 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632741936
+ -30  13  0  0  0  -27  0  0  0  0 
+ 0  -96  -128  -98  -97 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632742196
+ 58  8  8  98  71  94  4  83  7  -34 
+
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632742522
+ 67  0  2  0  -128  -97  0  6  10  86 
+ -72  92  21  -128  -49  0  8  -112  -72  24 
+ 65  1  -99  81  0 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632743116
+ 111  20  -64  122  38  -57  6  96  23  -32 
+ 7  -31  24  33  8  31  7  78  7  -106 
+ 7  -35  -106  0  70  0  -32  0  -102  -102 
+ 79  12  -15  12  -128  27  -45 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632743125
+ 37  0  11  0  -49  -2  48  15  25  -39 
+ 24  0  3  -128  82  0  5  10  86  -72 
+ 86  0 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632743731
+ 108  -1  -1  -56  30  0  0  84  104  101 
+ 32  100  111  111  114  32  115  101  101  109 
+ 115  32  116  111  32  98  101  32  115  116 
+ 117  99  107  46  0  -124  0  0  4  5 
+ -116  4  -46  0  12  1  0  0  0  -26 
+ 0  99  109  0  97  110  0  47  0  8 
+ -128  47  -2  32  31  25  -29  24  15  0 
+ 4  10  42  21  -128 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632743757
+ 77  9  0  0  0  -26  -15  4  -68  97 
+ -3 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632744325
+ -11  0  2  0  -128  95  0  4  10  47 
+ 22  0 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632744759
+ 35 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632744994
+ -34  0  2  0  -128  84  0  5  10  46 
+ 22  11  64 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632745017
+ 66  26  120  28  8  -99  8  -96  88  96 
+ 8  31  72  -95  8  -96  8  96  -64  81 
+ -69  44  6  98  6  -30  7  -31  125  0 
+ 76  0  -37  0  -103  -103  79  12  -15  12 
+ -128  27  -45 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632745217
+ 35  0  49  0  6  0  -37  0  -103  89 
+ 79  12  -15  12  -128  27  -45 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632745376
+ -6  0  -27  0  6  0  -37  0  -103  26 
+ 79  12  -15  12  -128  27  -45 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632745528
+ 73  -1  -1  -92  -1  -1  -45  30  0  0 
+ 84  104  101  32  100  111  111  114  32  115 
+ 101  101  109  115  32  116  111  32  98  101 
+ 32  115  116  117  99  107  46  0  17  0 
+ 12  1  0  0  0  -25  0  101  108  0 
+ 106  117  0  25  0  17  -128  51  -1  -128 
+ 32  31  25  -29  24  48  15  25  -39  24 
+ 0  3  -128  17  0  5  10  41  22  11 
+ 64 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632745553
+ 64  9  0  0  0  -25  -15  29  -89  80 
+ -68 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632746133
+ -89  -1  -1  -51  0  50  -103  30  0  0 
+ 84  104  101  32  100  111  111  114  32  115 
+ 101  101  109  115  32  116  111  32  98  101 
+ 32  115  116  117  99  107  46  0  4  0 
+ 8  -128  47  -2  32  31  25  -29  24  62 
+ 0  5  10  40  23  11  64 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632746556
+ -107 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632746726
+ 123  0  2  0  -128  108  0  7  10  88 
+ -96  -79  112  -83  80 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632747330
+ 29  0  11  1  0  0  0  -24  2  103 
+ 122  0  112  0  69  0  2  0  -128  -4 
+ 0  7  10  88  -84  -91  90  -31  72 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632747336
+ 73  13  0  0  0  -24  0  0  0  0 
+ 9  101  -62  53  -27 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632747397
+ -91  24  -64  113  -57  21  8  95  8  95 
+ 8  96  8  95  72  -96  8  31  120  96 
+ 56  96  8  -34  8  95 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632747898
+ 120  6  -64  105  -78  53  23  -31  -57  0 
+ 100  0  -25  0  -110  14  79  12  -15  12 
+ -128  27  -45 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632747924
+ 27  0  2  0  -128  7  0  6  10  84 
+ 41  86  20  -128 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632748586
+ 89  -1  -1  -121  30  0  0  84  104  101 
+ 32  100  111  111  114  32  115  101  101  109 
+ 115  32  116  111  32  98  101  32  115  116 
+ 117  99  107  46  0  37  0  8  -128  47 
+ -2  32  31  25  -29  24  -11  0  5  10 
+ 84  21  -123  32 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632748916
+ -115 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632748996
+ -84  4  -64  -71  -75  48  14  0  42  0 
+ -26  0  -110  -58  79  12  -15  12  -128  27 
+ -45 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632749161
+ -43  0  121  0  6  0  -26  0  -110  49 
+ 79  12  -15  12  -128  27  -45 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632749187
+ 12  0  11  1  0  0  0  -23  2  103 
+ 122  0  112  0  80  0  2  0  -128  -53 
+ 0  5  10  88  20  -123  64 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632749196
+ -78  13  0  0  0  -23  0  0  0  0 
+ 9  -82  -98  -26  64 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632749319
+ -105  0  68  0  6  0  -26  0  -110  -48 
+ 79  12  -15  12  -128  27  -45 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632749497
+ 99  0  22  0  6  0  -26  0  -110  -121 
+ 79  12  -15  12  -128  27  -45 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632749640
+ 103  0  -75  0  6  0  -26  0  -110  -9 
+ 79  12  -15  12  -128  27  -45 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632749736
+ -57  -1  -1  -35  -1  -1  43  -1  -1  -50 
+ -1  -1  -33  30  0  0  84  104  101  32 
+ 100  111  111  114  32  115  101  101  109  115 
+ 32  116  111  32  98  101  32  115  116  117 
+ 99  107  46  0  112  0  8  -128  47  -2 
+ 32  31  25  -29  24  0  0  5  10  22 
+ 20  -123  64 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632749803
+ -71  0  96  0  6  0  -26  0  -110  39 
+ 79  12  -15  12  -128  27  -45 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632749997
+ 2  0  -84  0  6  0  -26  0  -110  11 
+ 79  12  -15  12  -128  27  -45 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632750176
+ 6  0  -68  0  6  0  -26  0  -110  -60 
+ 79  12  -15  12  -128  27  -45 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632750332
+ 92  -1  -1  31  -1  -1  -42  -1  -1  107 
+ 30  0  0  84  104  101  32  100  111  111 
+ 114  32  115  101  101  109  115  32  116  111 
+ 32  98  101  32  115  116  117  99  107  46 
+ 0  -125  0  8  -128  47  -2  32  31  25 
+ -29  24  -38  0  3  10  0  0 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632750354
+ 76  0  -69  0  6  0  -26  0  -110  -113 
+ 79  12  -15  12  -128  27  -45 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632750498
+ 42  0  13  0  6  0  -26  0  -110  -111 
+ 79  12  -15  12  -128  27  -45 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632750644
+ -2  0  28  0  4  0  -26  0  -110  20 
+ 79  12  -15  12  -128  27  -45 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632750933
+ 34  -1  -1  -10  -1  -1  -128  -1  -1  106 
+ -1  -1  -3  30  0  0  84  104  101  32 
+ 100  111  111  114  32  115  101  101  109  115 
+ 32  116  111  32  98  101  32  115  116  117 
+ 99  107  46  0  -27  0  11  1  0  0 
+ 0  -22  0  99  104  0  102  0  -72  0 
+ 8  -128  47  -2  32  31  25  -29  24  81 
+ 0  3  10  0  -80 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632750985
+ 123  9  0  0  0  -22  -19  -68  8  114 
+ -66 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632751532
+ -40  0  2  0  -128  88  0  10  10  5 
+ -62  -64  65  -23  79  102  108  0 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632751956
+ 66 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632752145
+ -45  0  2  0  -128  -65  0  6  11  22 
+ 22  -117  10  -64 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632752625
+ 32  0 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632752641
+ 114  0  -77  0  80  0  -26  0  -110  -75 
+ 79  12  -15  12  -128  27  -45 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632752797
+ -93  0  16  0  4  0  -26  0  -110  -6 
+ 79  12  -15  12  -128  27  -45 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632752802
+ 48  0  11  1  0  0  0  -21  2  103 
+ 99  0  107  0  75  0  2  0  -128  -6 
+ 0  7  11  90  -79  81  112  -96  -96 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632752817
+ 52  13  0  0  0  -21  0  0  0  0 
+ 25  -2  -31  87  47 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632753378
+ -28  -1  -1  -47  -1  -1  9  30  0  0 
+ 84  104  101  32  100  111  111  114  32  115 
+ 101  101  109  115  32  116  111  32  98  101 
+ 32  115  116  117  99  107  46  0  66  0 
+ 8  -128  47  -2  32  31  25  -29  24  84 
+ 0  7  11  90  -79  72  40  41  0 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632753835
+ 7 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632753915
+ -12  0 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632753942
+ 111  0  2  0  -128  -87  0  7  11  90 
+ 43  21  -85  41  0 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632754543
+ 46  0  12  1  0  0  0  -20  0  99 
+ 116  0  97  102  0  -118  0  2  0  -128 
+ -13  0  6  11  10  -59  -54  -54  64 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632754557
+ 33  9  0  0  0  -20  -15  -2  83  -119 
+ 119 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632754796
+ 96  13  -62  -103  -72  45  -126  110  -114  -124 
+ -21  -124  -121  -1  -1 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632755149
+ -80  0  2  0  -128  21  0  6  11  10 
+ -54  87  10  64 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632755746
+ 11  0  2  0  -128  -112  0  4  11  88 
+ 7  0 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632755816
+ -59 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632756349
+ 18  0  11  1  0  0  0  -19  2  97 
+ 112  0  100  0  116  0  2  0  -128  48 
+ 0  3  10  43  0 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632756357
+ 45  13  0  0  0  -19  0  0  0  0 
+ 1  59  -44  44  100 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632756797
+ -116  0 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632757021
+ 113  0  2  0  -128  84  0  3  10  43 
+ 0 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632757553
+ -65  0  2  0  -128  51  0  3  10  44 
+ 0 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632757816
+ -113 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632758147
+ -51  0  12  1  0  0  0  -18  0  98 
+ 115  0  97  108  0  126  0  2  0  -128 
+ 66  0  3  10  21  -128 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632758157
+ 117  9  0  0  0  -18  -19  -40  100  -73 
+ -70 
+from server [addr=oldschool60.runescape.com/62.67.0.108,port=43333,localport=60979]: 
+timestamp: 1437632758749
+ 3  0  2  0  -128  103  0  4  10  41 
+ 82  0 
+from client [addr=/192.168.254.69,port=51322,localport=43594]: 
+timestamp: 1437632758818
+ -126  0 
