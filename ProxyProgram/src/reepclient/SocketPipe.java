@@ -19,6 +19,7 @@ public class SocketPipe
 								   inputSocket.toString() + ". Message and stack trace follow: ");
 				System.out.println(e.getMessage());
 				e.printStackTrace();
+				break;
 			}
 		}
 		try

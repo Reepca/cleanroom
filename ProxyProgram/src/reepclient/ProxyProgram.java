@@ -1,6 +1,6 @@
 package reepclient;
-// TODO: Convert full byte sequences to strings to print, for better unicode support
-//TODO: Add pseudo-regex-ish support to findByteSequence - probably add a helper method.
+
+
 
 import java.net.InetAddress;
 import java.io.PrintStream;
@@ -15,7 +15,7 @@ public class ProxyProgram
 {
 	public static final int PRIMARY_CLIENT_PORT = 43594;
 	public static final int UPDATE_SERVER_IN_PORT = 43596;
-	public static final String WORLD_60_GAME_SERVER = "oldschool60.runescape.com";
+	public static final String WORLD_60_GAME_SERVER = "oldschool81.runescape.com";
 	public static final String UPDATE_SERVER = "";
 	
 	//has to be different from client port so it doesn't get sent back to itself
@@ -27,6 +27,8 @@ public class ProxyProgram
 	ServerSocket listeningServer;
 	ArrayList<SocketPipe> pipes = new ArrayList<SocketPipe>();
 	ArrayList<PipeManipulator> processingChain;
+	ArrayList<Socket> serverSideSockets = new ArrayList<Socket>();
+	ArrayList<Socket> clientSideSockets = new ArrayList<Socket>();
 	PrintStream output = System.out;
 	
 	PipeManipulator callProcessingChain = (throughBytes, from, to) ->
@@ -50,11 +52,13 @@ public class ProxyProgram
 				Socket outToServerConnection = new Socket(serverAddress, outToServerPort);
 				pipes.add(new SocketPipe(newClientConnection, outToServerConnection, callProcessingChain));
 				pipes.add(new SocketPipe(outToServerConnection, newClientConnection, callProcessingChain));
-				synchronized(System.out)
+				serverSideSockets.add(outToServerConnection);
+				clientSideSockets.add(newClientConnection);
+				synchronized(output)
 				{
-					System.out.println("new client connection: " + 
+					output.println("new client connection: " + 
 										newClientConnection.toString().replace("Socket", ""));
-					System.out.println("Successfully connected to server, Socket information: " +
+					output.println("Successfully connected to server, Socket information: " +
 									   outToServerConnection.toString().replace("Socket", ""));
 				}
 			}catch(Exception e)
@@ -77,6 +81,24 @@ public class ProxyProgram
 		processingChain.add(PipeManipulator.defaultBehavior);
 		listeningServer = new ServerSocket(inFromClientPort);
 		System.out.println("now listening for connections on port " + inFromClientPort);
+	}
+	
+	public ArrayList<Socket> getClientSideSockets()
+	{
+		return clientSideSockets;
+	}
+	
+	public ArrayList<Socket> getServerSideSockets()
+	{
+		return serverSideSockets;
+	}
+	
+	public ArrayList<Socket> getAllSockets()
+	{
+		ArrayList<Socket> returnList = new ArrayList<Socket>();
+		returnList.addAll(clientSideSockets);
+		returnList.addAll(serverSideSockets);
+		return returnList;
 	}
 	
 	public void startListening()
@@ -110,7 +132,7 @@ public class ProxyProgram
 		ArrayList<PipeManipulator> chainOfProcessing = new ArrayList<PipeManipulator>();
 		String programCalledFromDir = System.getProperty("user.dir");
 			
-		ProxyProgram proxy = new ProxyProgram(PRIMARY_CLIENT_PORT, OUT_PORT, "oldschool60.runescape.com", 
+		ProxyProgram proxy = new ProxyProgram(PRIMARY_CLIENT_PORT, OUT_PORT, WORLD_60_GAME_SERVER, 
 				chainOfProcessing);
 		PipeManipulator bytePrinter = (throughBytes, from, to) ->
 		{
@@ -178,7 +200,7 @@ public class ProxyProgram
 				{
 					byte[] input = new byte[1000];
 					System.in.read(input);
-					String inputString = new String(input);
+					String inputString = new String(input).trim();
 					String[] separatedInput = inputString.split(" ");
 					for(int i = 0; i < separatedInput.length; i++)
 					{
@@ -189,13 +211,43 @@ public class ProxyProgram
 								proxy.getPrintStream().flush();
 								if(!separatedInput[i+1].toLowerCase().trim().equals("system.out"))
 								{
-									//System.out.println("attempting to switch output to: " + programCalledFromDir + separatedInput[i + 1]);
-									File writeOutTo = new File((programCalledFromDir + separatedInput[i+1]).trim());
+									
+									File writeOutTo = new File((separatedInput[i+1]).trim());
+									
 									writeOutTo.createNewFile();
 									//System.out.println("successfully made File");
 									proxy.setPrintStream(new PrintStream(writeOutTo));
 								}else proxy.setPrintStream(System.out);
 							}
+							i++;
+						}
+						
+						if(separatedInput[i].toLowerCase().equals("newmessage") && separatedInput.length - i > 1)
+						{
+							String sendTo = separatedInput[i + 1];
+							String[] bytes = separatedInput[i + 2].split(",");
+							byte[] byteValues = new byte[bytes.length];
+							for(int j = 0; i < bytes.length; i++)
+							{
+								byteValues[j] = Byte.parseByte(bytes[j]);
+							}
+							
+							proxy.getAllSockets().stream().filter(testSocket -> 
+							(testSocket.getInetAddress().getHostName().equals(sendTo) || testSocket.
+								getInetAddress().getHostAddress().equals(sendTo))).forEach(s ->
+								{
+									try
+									{
+										s.getOutputStream().write(byteValues);
+									}catch(Exception e)
+									{
+											System.out.println("Something went wrong while sending " +
+															   "custom message to " + s.getInetAddress()
+															   .getHostName());
+											e.printStackTrace();
+									}
+								});
+							
 						}
 							
 					}
