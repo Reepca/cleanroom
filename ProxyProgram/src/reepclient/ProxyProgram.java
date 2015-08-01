@@ -15,7 +15,7 @@ public class ProxyProgram
 {
 	public static final int PRIMARY_CLIENT_PORT = 43594;
 	public static final int UPDATE_SERVER_IN_PORT = 43596;
-	public static final String WORLD_60_GAME_SERVER = "oldschool81.runescape.com";
+	public static final String WORLD_60_GAME_SERVER = "oldschool60.runescape.com";
 	public static final String UPDATE_SERVER = "";
 	
 	//has to be different from client port so it doesn't get sent back to itself
