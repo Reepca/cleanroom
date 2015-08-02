@@ -3,6 +3,7 @@ package reepclient;
 
 
 import java.net.InetAddress;
+import java.io.IOException;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.net.Socket;
@@ -33,10 +34,10 @@ public class ProxyProgram
 	
 	PipeManipulator callProcessingChain = (throughBytes, from, to) ->
 	{
-		byte[] out = null;
+		byte[] out = throughBytes;
 		for(PipeManipulator thisAction: processingChain)
 		{
-			out = thisAction.actOnBytes(throughBytes, from, to);
+			out = thisAction.actOnBytes(out, from, to);
 		}
 		return out;
 	};
@@ -80,7 +81,6 @@ public class ProxyProgram
 		this.processingChain = processingChain;
 		processingChain.add(PipeManipulator.defaultBehavior);
 		listeningServer = new ServerSocket(inFromClientPort);
-		System.out.println("now listening for connections on port " + inFromClientPort);
 	}
 	
 	public ArrayList<Socket> getClientSideSockets()
@@ -104,6 +104,7 @@ public class ProxyProgram
 	public void startListening()
 	{
 		clientGreeter.start();
+		System.out.println("now listening for connections on port " + inFromClientPort);
 	}
 	
 	public void setPrintStream(PrintStream setTo)
@@ -134,6 +135,20 @@ public class ProxyProgram
 			
 		ProxyProgram proxy = new ProxyProgram(PRIMARY_CLIENT_PORT, OUT_PORT, WORLD_60_GAME_SERVER, 
 				chainOfProcessing);
+		
+		PipeManipulator byteRawOut = (throughBytes, from, to) ->
+		{
+			try
+			{
+				proxy.getPrintStream().write(throughBytes);
+			}catch(IOException e)
+			{
+				System.err.println("Something went wrong writing to PrintStream");
+				e.printStackTrace();
+			}
+			return throughBytes;
+		};
+		
 		PipeManipulator bytePrinter = (throughBytes, from, to) ->
 		{
 			if(throughBytes.length > 0)
@@ -257,10 +272,23 @@ public class ProxyProgram
 				}
 			}
 		});
+		TimeDisplay timeShower = new TimeDisplay(600);
 		Runtime.getRuntime().addShutdownHook(new Thread(() -> {proxy.getPrintStream().flush();}));
 		inputParser.start();
-		chainOfProcessing.add(bytePrinter);
-		if(args.length > 0){if(args[0].equals("-text")){chainOfProcessing.add(textPrinter);}}
+		String[] pipeStrings = {"-binary", "-bytes", "-text"};
+		PipeManipulator[] pipes = {byteRawOut, bytePrinter, textPrinter};
+		for(int i = 0; i < pipeStrings.length; i++)
+		{
+			for(int j = 0; j < args.length; j++)
+			{
+				if(args[j].toLowerCase().equals(pipeStrings[i]))
+				{
+					chainOfProcessing.add(pipes[i]);
+					break;
+				}
+			}
+		}
+		if(chainOfProcessing.size() < 2){chainOfProcessing.add(bytePrinter);}
 			
 		proxy.startListening();
 		
