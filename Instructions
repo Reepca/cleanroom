@@ -1,0 +1,6 @@
+ 
+To setup iptables:
+
+run 
+
+sudo iptables-restore /path/to/cleanroom/iptables-settings

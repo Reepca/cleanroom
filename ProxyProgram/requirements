@@ -1,4 +1,5 @@
-If you want the proxy program in its current state (10:21 P.M. July 20, 2015) to work, you'll need to use linux's iptables command to redirect tcp traffic on port 43594 to the program. Another rule is also needed to shift the outgoing traffic from the proxy (to the server) to the correct port, since if it was already on port 43594 it would be redirected to itself. Here are the commands:
+If you want the proxy program in its current state (10:21 P.M. July 20, 2015) to work, you'll need to use linux's iptables command to redirect tcp traffic on port 43594 to the program. 
+Another rule is also needed to shift the outgoing traffic from the proxy (to the server) to the correct port, since if it was already on port 43594 it would be redirected to itself. Here are the commands:
 
 sudo iptables -t nat -A OUTPUT -p tcp --dport 43594 -j DNAT --to-destination 127.0.0.1:43594
 
