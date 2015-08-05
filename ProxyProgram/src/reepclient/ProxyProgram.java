@@ -26,20 +26,21 @@ public class ProxyProgram
 	int outToServerPort;
 	String serverAddress;
 	ServerSocket listeningServer;
-	ArrayList<SocketPipe> pipes = new ArrayList<SocketPipe>();
-	ArrayList<PipeManipulator> processingChain;
+	ArrayList<MessageDispatcher> pipes = new ArrayList<MessageDispatcher>();
+	ArrayList<MessageManipulator> processingChain;
 	ArrayList<Socket> serverSideSockets = new ArrayList<Socket>();
 	ArrayList<Socket> clientSideSockets = new ArrayList<Socket>();
+	ArrayList<SocketMessage> messageQueue = new ArrayList<SocketMessage>();
 	PrintStream output = System.out;
+	public volatile boolean paused = false;
+	public volatile boolean stepMode = false;
 	
-	PipeManipulator callProcessingChain = (throughBytes, from, to) ->
+	MessageManipulator callProcessingChain = (message) ->
 	{
-		byte[] out = throughBytes;
-		for(PipeManipulator thisAction: processingChain)
+		for(MessageManipulator thisAction: processingChain)
 		{
-			out = thisAction.actOnBytes(out, from, to);
+			thisAction.actOnMessage(message);
 		}
-		return out;
 	};
 	
 	
@@ -51,8 +52,8 @@ public class ProxyProgram
 			{
 				Socket newClientConnection = listeningServer.accept();
 				Socket outToServerConnection = new Socket(serverAddress, outToServerPort);
-				pipes.add(new SocketPipe(newClientConnection, outToServerConnection, callProcessingChain));
-				pipes.add(new SocketPipe(outToServerConnection, newClientConnection, callProcessingChain));
+				pipes.add(new MessageDispatcher(newClientConnection, outToServerConnection, this));
+				pipes.add(new MessageDispatcher(outToServerConnection, newClientConnection, this));
 				serverSideSockets.add(outToServerConnection);
 				clientSideSockets.add(newClientConnection);
 				synchronized(output)
@@ -73,14 +74,24 @@ public class ProxyProgram
 	ProxyProgram(int inFromClientPort, 
 				 int outToServerPort, 
 				 String serverAddress,
-				 ArrayList<PipeManipulator> processingChain)throws Exception
+				 ArrayList<MessageManipulator> processingChain)throws Exception
 	{
 		this.serverAddress = serverAddress;
 		this.inFromClientPort = inFromClientPort;
 		this.outToServerPort = outToServerPort;
 		this.processingChain = processingChain;
-		processingChain.add(PipeManipulator.defaultBehavior);
 		listeningServer = new ServerSocket(inFromClientPort);
+	}
+	
+	public void addSocketMessage(SocketMessage toAdd)
+	{
+		synchronized(messageQueue)
+		{
+			if(toAdd != null)
+			{
+				messageQueue.add(toAdd);
+			}
+		}
 	}
 	
 	public ArrayList<Socket> getClientSideSockets()
@@ -105,6 +116,32 @@ public class ProxyProgram
 	{
 		clientGreeter.start();
 		System.out.println("now listening for connections on port " + inFromClientPort);
+		pipeLoop();
+	}
+	
+	private void pipeLoop()
+	{
+		while(true)
+		{
+			paused = true;
+			while(stepMode && paused){}
+			synchronized(messageQueue)
+			{
+				if(messageQueue.size() > 0)
+				{
+					callProcessingChain.actOnMessage(messageQueue.get(0));
+					try
+					{
+						messageQueue.get(0).sendMessage();
+					}catch(Exception e)
+					{
+						System.out.println("Something went wrong when sending a message through");
+						e.printStackTrace();
+					}
+					messageQueue.remove(0);
+				}
+			}
+		}
 	}
 	
 	public void setPrintStream(PrintStream setTo)
@@ -117,7 +154,7 @@ public class ProxyProgram
 		return output;
 	}
 	
-	ArrayList<PipeManipulator> getProcessingChain()
+	ArrayList<MessageManipulator> getProcessingChain()
 	{
 		return processingChain;
 	}
@@ -130,42 +167,41 @@ public class ProxyProgram
 	
 	public static void main(String[] args)throws Exception
 	{
-		ArrayList<PipeManipulator> chainOfProcessing = new ArrayList<PipeManipulator>();
+		ArrayList<MessageManipulator> chainOfProcessing = new ArrayList<MessageManipulator>();
 		String programCalledFromDir = System.getProperty("user.dir");
 			
 		ProxyProgram proxy = new ProxyProgram(PRIMARY_CLIENT_PORT, OUT_PORT, WORLD_60_GAME_SERVER, 
 				chainOfProcessing);
 		
-		PipeManipulator byteRawOut = (throughBytes, from, to) ->
+		MessageManipulator byteRawOut = (message) ->
 		{
 			try
 			{
-				proxy.getPrintStream().write(throughBytes);
+				proxy.getPrintStream().write(message.byteContent);
 			}catch(IOException e)
 			{
 				System.err.println("Something went wrong writing to PrintStream");
 				e.printStackTrace();
 			}
-			return throughBytes;
 		};
 		
-		PipeManipulator bytePrinter = (throughBytes, from, to) ->
-		{
-			if(throughBytes.length > 0)
+		MessageManipulator bytePrinter = (message) ->
+		{	
+			if(message.byteContent.length > 0)
 			{			
 				long timeStamp = System.currentTimeMillis();
 				PrintStream output = proxy.getPrintStream();
 				synchronized(output)
 				{
 					String alias;
-					if(proxy.isServerSide(from))alias = "server";
+					if(proxy.isServerSide(message.from))alias = "server";
 					else alias = "client";
 					
-					output.println("from " + alias + " " + from.toString().replace("Socket", "") + ": ");
+					output.println("from " + alias + " " + message.from.toString().replace("Socket", "") + ": ");
 					output.println("timestamp: " + timeStamp);
 					int timesPrinted = 0;
 					int perLineLimit = 10;
-					for(byte b: throughBytes)
+					for(byte b: message.byteContent)
 					{
 						output.print(" " + b + " ");
 						timesPrinted++;
@@ -177,19 +213,18 @@ public class ProxyProgram
 					output.println();
 				}
 			}
-			return throughBytes;
 		};
 		
-		PipeManipulator textPrinter = (throughBytes, from, to) ->
+		MessageManipulator textPrinter = (message) ->
 		{
-			if(throughBytes.length > 0)
+			if(message.byteContent.length > 0)
 			{
 				PrintStream output = proxy.getPrintStream();
 				synchronized(output)
 				{
 					output.println("text representation: ");
 					int perLineLimit = 20;
-					String fullString = new String(throughBytes);
+					String fullString = new String(message.byteContent);
 					int sectionCount = (int)Math.ceil((float)fullString.length() / (float)perLineLimit);
 					for(int i = 0; i < sectionCount; i++)
 					{
@@ -204,8 +239,8 @@ public class ProxyProgram
 					output.println();
 				}
 			}
-			return throughBytes;
 		};
+		
 		
 		Thread inputParser = new Thread(() -> 
 		{
@@ -213,10 +248,14 @@ public class ProxyProgram
 			{
 				try
 				{
-					byte[] input = new byte[1000];
-					System.in.read(input);
-					String inputString = new String(input).trim();
-					String[] separatedInput = inputString.split(" ");
+					byte[] inputBuffer = new byte[1000];
+					int readCount = System.in.read(inputBuffer);
+					byte[] input = new byte[readCount];
+					System.arraycopy(inputBuffer, 0, input, 0, input.length);
+					String inputString = new String(input);
+					if(inputString.toLowerCase().trim().equals("step")){proxy.stepMode = !proxy.stepMode;}
+					if(inputString.toLowerCase().equals(System.getProperty("line.separator"))){proxy.paused = false;}
+					String[] separatedInput = inputString.trim().split(" ");
 					for(int i = 0; i < separatedInput.length; i++)
 					{
 						if(separatedInput[i].equals("--output") && i != separatedInput.length - 1)
@@ -276,7 +315,7 @@ public class ProxyProgram
 		Runtime.getRuntime().addShutdownHook(new Thread(() -> {proxy.getPrintStream().flush();}));
 		inputParser.start();
 		String[] pipeStrings = {"-binary", "-bytes", "-text"};
-		PipeManipulator[] pipes = {byteRawOut, bytePrinter, textPrinter};
+		MessageManipulator[] pipes = {byteRawOut, bytePrinter, textPrinter};
 		for(int i = 0; i < pipeStrings.length; i++)
 		{
 			for(int j = 0; j < args.length; j++)
@@ -289,7 +328,6 @@ public class ProxyProgram
 			}
 		}
 		if(chainOfProcessing.size() < 2){chainOfProcessing.add(bytePrinter);}
-			
 		proxy.startListening();
 		
 	}
