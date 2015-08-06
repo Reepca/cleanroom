@@ -48,7 +48,7 @@ public class MessageDispatcher
 		{
 			byte[] bytesRead = new byte[byteCount];
 			System.arraycopy(bytesIn, 0, bytesRead, 0, bytesRead.length);
-			return new SocketMessage(bytesRead, inputSocket, outputSocket);
+			return new SocketMessage(bytesRead, inputSocket, outputSocket, System.currentTimeMillis());
 		}
 		return null;
 	}

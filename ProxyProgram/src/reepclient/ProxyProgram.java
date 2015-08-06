@@ -189,7 +189,6 @@ public class ProxyProgram
 		{	
 			if(message.byteContent.length > 0)
 			{			
-				long timeStamp = System.currentTimeMillis();
 				PrintStream output = proxy.getPrintStream();
 				synchronized(output)
 				{
@@ -198,7 +197,7 @@ public class ProxyProgram
 					else alias = "client";
 					
 					output.println("from " + alias + " " + message.from.toString().replace("Socket", "") + ": ");
-					output.println("timestamp: " + timeStamp);
+					output.println("timestamp: " + message.timeOfArrival);
 					int timesPrinted = 0;
 					int perLineLimit = 10;
 					for(byte b: message.byteContent)
@@ -253,7 +252,8 @@ public class ProxyProgram
 					byte[] input = new byte[readCount];
 					System.arraycopy(inputBuffer, 0, input, 0, input.length);
 					String inputString = new String(input);
-					if(inputString.toLowerCase().trim().equals("step")){proxy.stepMode = !proxy.stepMode;}
+					if(inputString.toLowerCase().trim().equals("step")){proxy.stepMode = !proxy.stepMode;
+																		System.out.println("stepMode: " + proxy.stepMode);}
 					if(inputString.toLowerCase().equals(System.getProperty("line.separator"))){proxy.paused = false;}
 					String[] separatedInput = inputString.trim().split(" ");
 					for(int i = 0; i < separatedInput.length; i++)
@@ -327,7 +327,7 @@ public class ProxyProgram
 				}
 			}
 		}
-		if(chainOfProcessing.size() < 2){chainOfProcessing.add(bytePrinter);}
+		if(chainOfProcessing.size() < 1){chainOfProcessing.add(bytePrinter);}
 		proxy.startListening();
 		
 	}
